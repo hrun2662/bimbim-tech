@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --color-brand-blue: #020617;
+  --color-brand-slate: #0f172a;
+  --color-brand-cyan: #22d3ee;
+  --color-brand-cyan-hover: #06b6d4;
+  --color-brand-light: #f8fafc;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-brand-blue text-slate-300 antialiased selection:bg-brand-cyan selection:text-brand-blue;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+  .section-padding {
+    @apply py-24 px-6 max-w-7xl mx-auto;
+  }
+  .btn-primary {
+    @apply px-6 py-2.5 bg-brand-cyan hover:bg-brand-cyan-hover text-brand-blue font-bold rounded-full transition-all duration-300 shadow-lg shadow-brand-cyan/20 uppercase text-sm tracking-tight;
+  }
+  .btn-outline {
+    @apply px-6 py-2.5 border border-white/20 text-white font-bold rounded-full hover:bg-white/10 transition-all duration-300 uppercase text-sm tracking-tight;
+  }
+  .card-gradient {
+    @apply bg-gradient-to-br from-slate-900 to-slate-800 border border-white/5;
+  }
+}
